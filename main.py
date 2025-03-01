@@ -226,3 +226,25 @@ def get_indices_sorted_desc(arr):
 arr = [3, 1, 4, 2]
 indices = get_indices_sorted_desc(arr)
 print("Индексы в порядке убывания элементов:", indices)  # [2, 0, 3, 1]
+
+# task 12
+
+def elements_between_first_second_max(arr):
+    if len(arr) < 2:
+        return []
+    max1 = max(arr)
+    idx1 = arr.index(max1)
+    max2 = -float('inf')
+    for i, num in enumerate(arr):
+        if num > max2 and (i != idx1 or num != max1):
+            max2 = num
+    if max2 == max1:
+        return []
+    idx2 = arr.index(max2, idx1 + 1) if max2 in arr[idx1 + 1:] else arr.index(max2)
+    start = min(idx1, idx2) + 1
+    end = max(idx1, idx2)
+    return arr[start:end]
+
+arr = [5, 2, 8, 3, 8, 4]
+result = elements_between_first_second_max(arr)
+print("Элементы между первым и вторым максимумами:", result)  # [3, 8]
