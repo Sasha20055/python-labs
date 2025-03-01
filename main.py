@@ -261,3 +261,13 @@ def elements_between_first_last_max(arr):
 arr = [5, 8, 3, 8, 4]
 result = elements_between_first_last_max(arr)
 print("Элементы между первым и последним максимумами:", result)
+
+# task 14
+
+def min_even_element(arr):
+    even_elements = [x for x in arr if x % 2 == 0]
+    return min(even_elements) if even_elements else None
+
+arr = [5, 3, 8, 2, 7]
+result = min_even_element(arr)
+print("Минимальный четный элемент:", result)  # 2
