@@ -1,4 +1,5 @@
 from math import gcd
+import re
 
 # task 1
 def count_non_coprime_even_numbers(n: int) -> int:
@@ -39,3 +40,9 @@ print(f"Количество слов в строке: {count_words(test_sentenc
 
 test_number = 123321
 print(f"Количество различных цифр в числе {test_number}: {count_unique_digits(test_number)}")
+
+# task 3
+
+text = "31 февраля 2007, 12 марта 2020, 29 февраля 2016"
+dates = re.findall(r"\b\d{1,2} (января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря) \d{4}\b", text)
+print(dates)
