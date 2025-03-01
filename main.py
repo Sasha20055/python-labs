@@ -193,3 +193,26 @@ sorted_strings = sort_by_vc_cv_diff(strings)
 print("Сортировка по разнице VC-CV:")
 for s in sorted_strings:
     print(s)
+
+# task 10
+
+def max_triple_avg(s):
+    max_avg = 0
+    for i in range(len(s)-2):
+        triplet = s[i:i+3]
+        avg = sum(ord(c) for c in triplet) / 3
+        if avg > max_avg:
+            max_avg = avg
+    return max_avg
+
+def sort_by_triple_avg_deviation(strings):
+    if not strings:
+        return []
+    first_avg = max_triple_avg(strings[0])
+    return sorted(strings, key=lambda x: (max_triple_avg(x) - first_avg)**2)
+
+strings = ["hello", "world", "python", "ai"]
+sorted_strings = sort_by_triple_avg_deviation(strings)
+print("Сортировка по отклонению тройного ASCII:")
+for s in sorted_strings:
+    print(s)
