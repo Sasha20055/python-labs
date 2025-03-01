@@ -270,4 +270,27 @@ def min_even_element(arr):
 
 arr = [5, 3, 8, 2, 7]
 result = min_even_element(arr)
-print("Минимальный четный элемент:", result)  # 2
+print("Минимальный четный элемент:", result)
+
+# task 15
+
+def prime_factors(n):
+    factors = []
+    if n < 2:
+        return factors
+    while n % 2 == 0:
+        factors.append(2)
+        n //= 2
+    i = 3
+    while i * i <= n:
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+        i += 2
+    if n > 1:
+        factors.append(n)
+    return sorted(factors)
+
+n = 28
+factors = prime_factors(n)
+print(f"Простые делители числа {n}:", factors)
