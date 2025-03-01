@@ -216,3 +216,13 @@ sorted_strings = sort_by_triple_avg_deviation(strings)
 print("Сортировка по отклонению тройного ASCII:")
 for s in sorted_strings:
     print(s)
+
+# task 11
+
+def get_indices_sorted_desc(arr):
+    indexed = sorted(enumerate(arr), key=lambda x: -x[1])
+    return [i for i, _ in indexed]
+
+arr = [3, 1, 4, 2]
+indices = get_indices_sorted_desc(arr)
+print("Индексы в порядке убывания элементов:", indices)  # [2, 0, 3, 1]
