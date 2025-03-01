@@ -124,3 +124,21 @@ def sort_strings_by_word_count():
 
 print("Упорядочивание строк по количеству слов:")
 sort_strings_by_word_count()
+
+# task 7
+
+def count_consonants_vowels_diff(s):
+    vowels = set("aeiouAEIOU")
+    consonants = set("bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ")
+    v = sum(1 for c in s if c in vowels)
+    c = sum(1 for c in s if c in consonants)
+    return c - v
+
+def sort_by_consonant_vowel_diff(strings):
+    return sorted(strings, key=lambda x: count_consonants_vowels_diff(x))
+
+strings = ["hello", "world", "python", "ai"]
+sorted_strings = sort_by_consonant_vowel_diff(strings)
+print("Сортировка по разнице согласных-гласных:")
+for s in sorted_strings:
+    print(s)
