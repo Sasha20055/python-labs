@@ -169,3 +169,27 @@ sorted_strings = sort_by_freq_deviation(strings)
 print("Сортировка по отклонению частоты символа:")
 for s in sorted_strings:
     print(s)
+
+# task 9
+
+def count_vc_cv_diff(s):
+    vowels = set("aeiouAEIOU")
+    vc, cv = 0, 0
+    for i in range(len(s)-1):
+        pair = s[i:i+2]
+        first_vowel = pair[0] in vowels
+        second_vowel = pair[1] in vowels
+        if first_vowel and not second_vowel:
+            vc += 1
+        elif not first_vowel and second_vowel:
+            cv += 1
+    return vc - cv
+
+def sort_by_vc_cv_diff(strings):
+    return sorted(strings, key=lambda x: count_vc_cv_diff(x))
+
+strings = ["hello", "world", "python", "ai"]
+sorted_strings = sort_by_vc_cv_diff(strings)
+print("Сортировка по разнице VC-CV:")
+for s in sorted_strings:
+    print(s)
