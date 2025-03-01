@@ -247,4 +247,17 @@ def elements_between_first_second_max(arr):
 
 arr = [5, 2, 8, 3, 8, 4]
 result = elements_between_first_second_max(arr)
-print("Элементы между первым и вторым максимумами:", result)  # [3, 8]
+print("Элементы между первым и вторым максимумами:", result)
+
+# task 13
+def elements_between_first_last_max(arr):
+    if not arr:
+        return []
+    max_val = max(arr)
+    first_idx = arr.index(max_val)
+    last_idx = len(arr) - 1 - arr[::-1].index(max_val)
+    return arr[first_idx + 1 : last_idx]
+
+arr = [5, 8, 3, 8, 4]
+result = elements_between_first_last_max(arr)
+print("Элементы между первым и последним максимумами:", result)
