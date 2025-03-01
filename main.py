@@ -84,3 +84,23 @@ print(f"Неиспользуемые символы: {find_unused_latin_chars(te
 
 test_str3 = "abc6 78x5y9"
 print(f"Цифр > 5: {count_digits_greater_than_five(test_str3)}")
+
+# task 5
+
+def read_and_sort_strings():
+    strings = []
+    print("Введите строки (для завершения введите пустую строку):")
+    while True:
+        s = input().strip()
+        if not s:
+            break
+        strings.append(s)
+
+    sorted_strings = sorted(strings, key=lambda x: len(x))
+
+    print("Отсортированный список строк по длине:")
+    for s in sorted_strings:
+        print(s)
+
+print("Сортировка строк по длине")
+read_and_sort_strings()
