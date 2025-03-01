@@ -104,3 +104,23 @@ def read_and_sort_strings():
 
 print("Сортировка строк по длине")
 read_and_sort_strings()
+
+# task 6
+
+def sort_strings_by_word_count():
+    strings = []
+    print("Введите строки (для завершения введите пустую строку):")
+    while True:
+        s = input().strip()
+        if not s:
+            break
+        strings.append(s)
+
+    sorted_strings = sorted(strings, key=lambda x: len(x.split()))
+
+    print("Отсортированный список строк по количеству слов:")
+    for s in sorted_strings:
+        print(s)
+
+print("Упорядочивание строк по количеству слов:")
+sort_strings_by_word_count()
