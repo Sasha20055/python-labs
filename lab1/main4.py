@@ -1,5 +1,5 @@
 # task 6
-
+from collections import Counter
 def sort_strings_by_word_count():
     strings = []
     print("Введите строки (для завершения введите пустую строку):")
@@ -44,7 +44,6 @@ reference_freq = {
 }
 
 def calculate_squared_deviation(s):
-    from collections import Counter
     cnt = Counter(s.lower())
     if not cnt:
         return 0
