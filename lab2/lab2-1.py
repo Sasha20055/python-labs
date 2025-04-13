@@ -4,4 +4,3 @@ for _ in range(n):
     line = input()
     words.update(line.split())
 print(len(words))
-
